@@ -1,0 +1,51 @@
+{
+  "name": "essto-restaurant",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite  --host --port 3000",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.51.23",
+    "axios": "^1.6.2",
+    "date-fns": "^3.2.0",
+    "framer-motion": "^11.11.13",
+    "gsap": "^3.12.5",
+    "localforage": "^1.10.0",
+    "match-sorter": "^6.3.1",
+    "object-to-formdata": "^4.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^13.5.0",
+    "react-router-dom": "^6.20.1",
+    "redux-thunk": "^3.1.0",
+    "sort-by": "^1.2.0",
+    "styled-components": "^6.1.4",
+    "stylis-plugin-rtl": "^2.1.1",
+    "swiper": "^11.0.5",
+    "vite-plugin-compression": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.3",
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@types/react-lazy-load-image-component": "^1.6.3",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "postcss": "^8.4.32",
+    "sass": "^1.69.5",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
+  }
+}

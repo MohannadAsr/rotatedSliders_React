@@ -1,0 +1,33 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Preserve existing rewrite rule for index.html
+  RewriteRule ^index\.html$ - [L]
+  
+  # Handle client-side routing (React routes)
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+  
+  
+  # Add Gzip support for .js and .css files
+  RewriteCond %{HTTP:Accept-Encoding} gzip
+  RewriteCond %{REQUEST_FILENAME} \.(js|css)$
+  RewriteCond %{REQUEST_FILENAME}.gz -f
+  RewriteRule ^(.*)\.(js|css)$ $1.$2.gz [QSA]
+</IfModule>
+
+<IfModule mod_headers.c>
+  # Serve Gzipped JavaScript files
+  <FilesMatch "\.js\.gz$">
+    Header set Content-Encoding gzip
+    Header set Content-Type "application/javascript"
+  </FilesMatch>
+  
+  # Serve Gzipped CSS files
+  <FilesMatch "\.css\.gz$">
+    Header set Content-Encoding gzip
+    Header set Content-Type "text/css"
+  </FilesMatch>
+</IfModule>
