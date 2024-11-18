@@ -103,11 +103,10 @@ const Slider = React.memo<{ reverse: boolean }>(({ reverse }) => {
 
       setLastScrollTop(currentScrollTop);
       setLastTimestamp(currentTimestamp);
-    };
 
-    const clearScroll = () => {
-      setIsScrolling(false); // Reset scrolling state after the transition
       useTimerFn(() => {
+        setIsScrolling(false); // Reset scrolling state after the transition
+
         smoothTransition(
           duration, // Current value
           durationType.normal, // Target value
@@ -124,12 +123,14 @@ const Slider = React.memo<{ reverse: boolean }>(({ reverse }) => {
       }, 50);
     };
 
+    // const clearScroll = () => {};
+
     window.addEventListener('scroll', setScroll);
-    window.addEventListener('scrollend', clearScroll);
+    // window.addEventListener('scrollend', clearScroll);
 
     return () => {
       window.removeEventListener('scroll', setScroll);
-      window.removeEventListener('scrollend', clearScroll);
+      // window.removeEventListener('scrollend', clearScroll);
     };
   }, [lastScrollTop, isScrolling]);
 
